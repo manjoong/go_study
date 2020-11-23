@@ -11,7 +11,9 @@ func main() {
 	for i, number := range numbers {
 		fmt.Println(i, number)
 	}
-	var letters = []string{"a", "b", "c"}
+	var letters = []string{}
+	letters = append(letters, "a")
+	fmt.Println(len(letters))
 	for i, letter := range letters{
 		fmt.Println(i, letter)
 	}
