@@ -2,15 +2,30 @@ package main
 
 import "github.com/headfirstgo/gadget"
 
-func playList(device gadget.TapePlayer, songs []string){
-	for _, song := range songs{
-		device.Play(song)
-	}
-	device.Stop()
+type Player interface{
+	Play(string)
+	Stop()
+
 }
+// func playList(device gadget.TapePlayer, songs []string){
+// 	for _, song := range songs{
+// 		device.Play(song)
+// 	}
+// 	device.Stop()
+// }
+
+func playList(device Player, songs []string){
+		for _, song := range songs{
+			device.Play(song)
+		}
+		device.Stop()
+	}
 
 func main(){
-	player := gadget.TapePlayer{}
+	// player := gadget.TapePlayer{}
 	mixtape := []string{"Jessie's Girl", "Whip It", "9 to 5"}
+	var player Player = gadget.TapePlayer{}
+	playList(player, mixtape)
+	player = gadget.TapeRecorder{}
 	playList(player, mixtape)
 }
