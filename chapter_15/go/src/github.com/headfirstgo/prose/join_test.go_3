@@ -1,0 +1,23 @@
+package prose
+
+import "testing"
+
+func TestTwoElements(t *testing.T){
+	list := []string{"apple", "orange"}
+	want := "apple and orange" //원하는 반환값
+	got := JoinWithCommas(list) //실제 반환값
+	if got != want{
+		// 전달한 값과 실제 출력된 값, 원하는 값을 쉽게 보기 위해 아래와 같이 출력
+		t.Errorf("JoinWithCommas(%#v) = \"%s\", want \"%s\"", list, got, want)
+	}
+}
+
+func TestThreeElements(t *testing.T){
+	list := []string{"apple", "orange", "pear"}
+	want := "apple, orange, and pear"
+	got := JoinWithCommas(list)
+	if got != want{
+		// 전달한 값과 실제 출력된 값, 원하는 값을 쉽게 보기 위해 아래와 같이 출력
+		t.Errorf("JoinWithCommas(%#v) = \"%s\", want \"%s\"", list, got, want)
+	}
+}

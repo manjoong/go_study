@@ -1,0 +1,20 @@
+package prose
+
+import "testing"
+
+func TestTwoElements(t *testing.T){
+	// 테스트 하려는 조건을 설정
+	list := []string{"apple", "orange"}
+	// 테스트 하려는 패키지의 함수를 사용하여 검출값과 비교
+	if JoinWithCommas(list) != "apple and orange" {
+		// 결과를 받는 방식으로 테스트를 진행
+		t.Error("didn't match expected value")
+	}
+}
+
+func TestThreeElements(t *testing.T){
+	list := []string{"apple", "orange", "pear"}
+	if JoinWithCommas(list) != "apple, orange, and pear" {
+		t.Error("didn't match expected value")
+	}
+}
