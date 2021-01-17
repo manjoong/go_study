@@ -12,6 +12,6 @@ func main() {
 
 	fmt.Println(str1 == str2)
 	fmt.Println(str1 != str2)
-	fmt.Println(str1 > str2)
+	fmt.Println(str1 > str2) //go 에선 문자열 비교할 때 아스키 코드에 대한 사전식 비교를 한다.
 
 }
