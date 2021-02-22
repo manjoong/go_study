@@ -30,7 +30,7 @@ func main(){
 	go func(){
 		for {
 			select{
-			case ch1 <- 777: //발신 용도123
+			case ch1 <- 777: //발신 용도1233
 			case str := <-ch2:
 				fmt.Println("ch2:", str)
 			}
